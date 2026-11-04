@@ -24,7 +24,7 @@ class DatabaseHelper(context : Context) : SQLiteOpenHelper(
     }
     //metodo para crear la base de satos y sus tablas
     override fun onCreate(db: SQLiteDatabase?) {
-        val crerTablaUsuarios = """
+        val crearTablaUsuarios = """
             CREATE TABLE $TABLE_USUARIOS (
             $COL_ID INTEGER PRIMARY KEY AUTOINCREMENT,
             $COL_NOMBRE TEXT NOT NULL,
@@ -33,7 +33,7 @@ class DatabaseHelper(context : Context) : SQLiteOpenHelper(
             
             )
         """.trimIndent()
-        db?.execSQL(crerTablaUsuarios)
+        db?.execSQL(crearTablaUsuarios)
     }
     // metodo para actualiza la tabla de datos
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
